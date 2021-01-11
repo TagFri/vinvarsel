@@ -1,0 +1,44 @@
+/* Set the graphic in center and at the width of the screen */
+.background-graphic {
+  width: 200%;
+  margin-left: -50%;
+}
+/* Style the email input field */
+input.email {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 80%;
+  border-radius: 100px;
+  padding: 3% 0 3% 0;
+}
+
+/*Setting the background color for each box */
+.category-wrapper {
+  background-color: #FFFAF7;
+  border-radius: 15px;
+  padding-top: 45px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+}
+
+li.checkbox {
+  width: 60%;
+}
+.category-wrapper .category-icon {
+  position: absolute;
+  top: -21px;
+  left: 50%;
+  margin-left: -32.5px;
+  width: 70px;
+  height: 70px;
+}
+
+.vertical-rectangle {
+  height: 90px;
+  background-color: #FFF3E8;
+  width: 3.5%;
+  margin: 0 auto;
+}

@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+/* COLOR LIBRARY */
+:root {
+  --text-dark-brown: #611912;
+  --text-light-brown: #9B7874;
+  --text-beige: #FECE9D;
+  --background-color-light: #FFFAF7;
+  --background-color-medium: #FFF3E8;
+  --orange: #FC4833
+}
+/* GLOBAL STYLES */
+* {
+  font-family: 'EB Garamond', serif;
+  color: var(--text-dark-brown);
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+}
+
+
+/* RESP. FONT SIZE */
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 26px;
+}
+p {
+  font-size: 24px;
+}
+p.fine-print, input.email {
+  font-size: 18px;
+}
+
+/* GLOBAL CSS CLASSES */
+.bold {
+  font-weight: bold;
+}
+
+/* SUB-GLOBAL STYLES*/
+li {
+  list-style: none;
+}
+
+.red-box-shadow {
+  box-shadow: 0 0 100px 5px #AA151530;
+}
+
+/* CUSTOM BUTTON */
+button {
+  border: solid #FC4833 1px;
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 10px 0;
+  width: 150px;
+}
+
+
+.custom-slider {margin: 0 40px;} .ngx-slider {width: 80%;}
+.ngx-slider-selection {background: #FC4833 !important; outline:none !important;}
+.ngx-slider-pointer {background: #FC4833 !important; outline:none !important;
+  :after {outline:none !important;}
+  :hover:after {outline:none !important;}}
+.ngx-slider-bubble {display: none !important; outline:none !important;}
+.ngx-slider-active {outline: none !important;}
+

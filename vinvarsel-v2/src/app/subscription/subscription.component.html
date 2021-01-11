@@ -1,0 +1,117 @@
+<form>
+<!--  EMAIL INPUT-->
+<div class="email-container" >
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Skriv inn epostadressen din"
+    class="email red-box-shadow"
+  >
+</div>
+<!--  BACKGROUND GRAPHIC-->
+<img class="background-graphic" src="../../assets/images/gif/front_page.gif">
+<!--  PRICE RANGE SELECTION-->
+  <div class="vertical-rectangle"></div>
+  <div class="category">
+  <div class="category-wrapper form-group">
+    <img src="/assets/images/gif/piggy_bank.gif" class="category-icon">
+    <div class="category-title">
+      <h2>Prisklasse</h2>
+      <p>kr {{minValue}} - {{ maxValue | currency: ' ':'symbol': '1.0-0' : 'no'}}</p>
+    </div>
+    <div class="category-list">
+      <div class="custom-slider">
+        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+      </div>
+    </div>
+  </div>
+  <!--  BEVERAGE SELECTION-->
+  <div class="vertical-rectangle"></div>
+  <div class="category-wrapper form-group">
+    <img src="assets/images/gif/alchol_type.gif" class="category-icon">
+    <div class="category-title">
+      <h2>Vinsort</h2>
+    </div>
+    <div class="category-list">
+      <ul class="split">
+        <li>
+          <input type='checkbox' checked> Alle <br>
+        </li>
+        <li class="checkbox" *ngFor="let beverage of beverages">
+          <input
+            type="checkbox"
+            id="{{beverage | lowercase}}"
+            name="{{beverage}}"
+            value="{{beverage | lowercase}}">
+          {{ beverage }} <br>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--  COUNTRY SELECTION-->
+  <div class="vertical-rectangle"></div>
+  <div class="category-wrapper">
+    <img src="assets/images/gif/contry.gif" class="category-icon">
+    <div class="form-group">
+      <div class="category-title">
+        <h2>Område</h2>
+      </div>
+      <div class="category-list">
+        <ul class="split">
+          <li>
+            <input type='checkbox' checked> Alle <br>
+          </li>
+          <li class="checkbox" *ngIf="hideCountries">
+            <div *ngFor="let country of popularContries">
+              <input
+                type="checkbox"
+                id="{{country | lowercase}}"
+                name="{{country}}"
+                value="{{country | lowercase}}">
+              {{ country }}
+            </div>
+          </li>
+          <li class="checkbox" *ngIf="!hideCountries">
+            <div *ngFor="let country of countries">
+              <input
+                type="checkbox"
+                id="{{country | lowercase}}"
+                name="{{country}}"
+                value="{{country | lowercase}}">
+              {{ country }}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="expand-selection">
+        <button
+          type="button"
+          class="expandBtn"
+          *ngIf="hideCountries"
+          (click)="onExpandCountries()">Velg flere</button>
+      </div>
+    </div>
+  </div>
+  <!--  TERMS-->
+    <div class="form-group">
+      <div class="category-list terms-container">
+        <ul>
+          <li class="terms">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              value="terms">
+          </li>
+        </ul>
+        <p>Jeg godtar at Vinvarsel.no lagrer min e-postadresse.</p>
+      </div>
+      <p class="fine-print">Du kan når som helst velge å melde deg av vinvarselet, og epostadressen din blir da slettet fra våre lister. Vi deler aldri din informasjon med tredjepart.</p>
+    </div>
+  </div>
+<!--  SUBMIT BUTTON-->
+<div class="submit-container">
+  <button type="submit">Varsle meg</button>
+</div>
+</form>

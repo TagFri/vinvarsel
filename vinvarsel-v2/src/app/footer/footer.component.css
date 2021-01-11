@@ -1,0 +1,40 @@
+footer {
+  position: relative;
+}
+
+img.full-width{
+  width: 100%;
+}
+.footer-info {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.logo {
+    width: 40px;
+}
+p.fine-print {
+  margin-bottom: 20%;
+  margin-top: 2%;
+}
+.developers {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.developer {
+  padding: 10px;
+  margin: 10px;
+}
+.developer-logo {
+  width: 60px;
+}
+h1, h2, h3, h4, p, .bold {
+  color: var(--text-beige)
+}
+
+
