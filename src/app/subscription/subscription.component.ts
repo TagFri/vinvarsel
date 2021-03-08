@@ -143,7 +143,7 @@ export class SubscriptionComponent implements OnInit {
     'Aromatisert vin',
     'Brennevin',
     'Fruktvin',
-    'Gaveartikler og tilbehør',
+    'Gaveartikler',
     'Hvitvin',
     'Mjød',
     'Musserende vin',
@@ -162,6 +162,9 @@ export class SubscriptionComponent implements OnInit {
 
   onExpandCountries(): void {
     this.hideCountries = this.hideCountries ? false : true;
+  }
+  sendSubscription(): void {
+
   }
 
 }

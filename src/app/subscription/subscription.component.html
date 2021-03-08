@@ -31,15 +31,12 @@
   <div class="category-wrapper form-group">
     <img src="assets/images/gif/alchol_type.gif" class="category-icon">
     <div class="category-title">
-      <h2>Vinsort</h2>
+      <h2>Alkoholtype</h2>
     </div>
     <div class="category-list">
-      <ul class="split">
-        <li>
-          <input type='checkbox' checked> Alle <br>
-        </li>
-        <li class="checkbox" *ngFor="let beverage of beverages">
-          <input
+      <ul class="grid-list">
+        <li *ngFor="let beverage of beverages">
+          <input class="checkbox"
             type="checkbox"
             id="{{beverage | lowercase}}"
             name="{{beverage}}"
@@ -58,29 +55,24 @@
         <h2>Område</h2>
       </div>
       <div class="category-list">
-        <ul class="split">
-          <li>
-            <input type='checkbox' checked> Alle <br>
-          </li>
-          <li class="checkbox" *ngIf="hideCountries">
-            <div *ngFor="let country of popularContries">
+        <ul class="grid-list" *ngIf="hideCountries">
+          <li class="checkbox" *ngFor="let country of popularContries">
               <input
                 type="checkbox"
                 id="{{country | lowercase}}"
                 name="{{country}}"
                 value="{{country | lowercase}}">
               {{ country }}
-            </div>
           </li>
-          <li class="checkbox" *ngIf="!hideCountries">
-            <div *ngFor="let country of countries">
+        </ul>
+        <ul class="grid-list" *ngIf="!hideCountries">
+          <li class="checkbox" *ngFor="let country of countries">
               <input
                 type="checkbox"
                 id="{{country | lowercase}}"
                 name="{{country}}"
                 value="{{country | lowercase}}">
               {{ country }}
-            </div>
           </li>
         </ul>
       </div>
@@ -91,20 +83,18 @@
           *ngIf="hideCountries"
           (click)="onExpandCountries()">Velg flere</button>
       </div>
+      <div class="expand-selection">
+        <button
+                type="button"
+                class="expandBtn"
+                *ngIf="!hideCountries"
+                (click)="onExpandCountries()">Vis færre</button>
+      </div>
     </div>
   </div>
   <!--  TERMS-->
     <div class="form-group">
       <div class="category-list terms-container">
-        <ul>
-          <li class="terms">
-            <input
-              type="checkbox"
-              id="terms"
-              name="terms"
-              value="terms">
-          </li>
-        </ul>
         <p>Jeg godtar at Vinvarsel.no lagrer min e-postadresse.</p>
       </div>
       <p class="fine-print">Du kan når som helst velge å melde deg av vinvarselet, og epostadressen din blir da slettet fra våre lister. Vi deler aldri din informasjon med tredjepart.</p>
@@ -112,6 +102,9 @@
   </div>
 <!--  SUBMIT BUTTON-->
 <div class="submit-container">
-  <button type="submit">Varsle meg</button>
+  <button
+          type="button"
+          class="expandBtn"
+          (click)="sendSubscription()">Varsle meg</button>
 </div>
 </form>
