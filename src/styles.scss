@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "globals";
 /* COLOR LIBRARY */
 :root {
   --text-dark-brown: #611912;
@@ -41,10 +43,6 @@ li {
   list-style: none;
 }
 
-.red-box-shadow {
-  box-shadow: 0 0 100px 5px #aa151530;
-}
-
 /* CUSTOM BUTTON */
 button {
   border: solid #fc4833 1px;
@@ -52,6 +50,9 @@ button {
   border-radius: 30px;
   padding: 10px 0;
   width: 150px;
+  &:disabled {
+    border-color: darkgray;
+  }
 }
 
 .custom-slider {

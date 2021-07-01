@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -13,10 +17,14 @@ import { HeaderComponent } from './header/header.component';
     FooterComponent,
     HeaderComponent
   ],
-  imports: [
-    BrowserModule,
-    NgxSliderModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        NgxSliderModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
